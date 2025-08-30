@@ -1,0 +1,76 @@
+﻿@model demoApp0818.Models.Book
+
+@{
+    ViewData["Title"] = "Create Book";
+}
+
+<h2>Create Book</h2>
+
+<form  method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" id="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Author" class="form-label"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Category" class="form-label"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label"></label>
+        <input asp-for="Stock" class="form-control" />
+        <span asp-validation-for="Stock" class="text-danger"></span>
+    </div>
+
+    @* <div class="mb-3"> *@
+    @*     <label class="form-label">Cover Image</label> *@
+    @*     <input type="file" name="CoverImageFile" class="form-control" /> *@
+    @*     <span asp-validation-for="CoverImageUrl" class="text-danger"></span> *@
+    @* </div> *@
+
+    <button type="submit" class="btn btn-success" onclick="btnClick()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+             fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0" />
+        </svg>
+        Add Book
+    </button>
+</form>
+
+
+
+
+@* <script> *@
+@*     async function btnClick() { *@
+@*         const title = document.getElementById("Title").value; *@
+@*         if (title === "") { *@
+@*             alert("Please enter a title for the book."); *@
+@*             return false; // Prevent form submission *@
+@*         } *@
+@*         else { *@
+@*             console.log("Title entered: " + title); *@
+@*         } *@
+@*         return true; // Allow form submission *@
+@*     } *@
+@* </script> *@
