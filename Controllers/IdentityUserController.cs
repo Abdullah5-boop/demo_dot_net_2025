@@ -7,7 +7,7 @@ namespace demoApp0818.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        public IdentityUserController(SignInManager<IdentityUser> signInManager,UserManager<IdentityUser> userManager)
+        public IdentityUserController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -39,5 +39,34 @@ namespace demoApp0818.Controllers
             Console.WriteLine($"Attempting to log in user: {login.UserName}");
             return View(login);
         }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(Models.Auth.SignUp register)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new IdentityUser { UserName = register.UserName, Email = register.Email };
+                var result = await _userManager.CreateAsync(user, register.Password);
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, "Admin");
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+            return View(register);
+        }
     }
+    
 }
+
+

@@ -19,15 +19,15 @@ namespace demoApp0818.Data
 
 
         }
-        private  static void seedRole(ModelBuilder builder )
+        private static void seedRole(ModelBuilder builder)
         {
             builder.Entity<IdentityRole>().HasData(
-                new IdentityRole() { Name = "Admin", ConcurrencyStamp = "1", NormalizedName = "Admin" }, 
-                new IdentityRole() { Name = "User", ConcurrencyStamp = "2", NormalizedName = "User" }, 
-                new IdentityRole() { Name = "HR", ConcurrencyStamp = "3", NormalizedName = "HR" }
-
-                );
+                new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN", ConcurrencyStamp = "1" },
+                new IdentityRole { Id = "2", Name = "User", NormalizedName = "USER", ConcurrencyStamp = "2" },
+                new IdentityRole { Id = "3", Name = "HR", NormalizedName = "HR", ConcurrencyStamp = "3" }
+            );
         }
+
 
 
 

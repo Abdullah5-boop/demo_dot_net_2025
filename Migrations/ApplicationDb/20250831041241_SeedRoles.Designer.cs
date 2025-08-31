@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using demoApp0818.Data;
 
@@ -11,9 +12,11 @@ using demoApp0818.Data;
 namespace demoApp0818.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250831041241_SeedRoles")]
+    partial class SeedRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,21 +54,21 @@ namespace demoApp0818.Migrations.ApplicationDb
                     b.HasData(
                         new
                         {
-                            Id = "1",
+                            Id = "4a026253-d7b2-4be5-b8a4-44b7d7bee7b9",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
-                            NormalizedName = "ADMIN"
+                            NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "2",
+                            Id = "77fbb75f-b48b-4c4f-a72f-e2d71751a05f",
                             ConcurrencyStamp = "2",
                             Name = "User",
-                            NormalizedName = "USER"
+                            NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "3",
+                            Id = "8c0a743a-f961-40d3-90af-603d0e4d3b3a",
                             ConcurrencyStamp = "3",
                             Name = "HR",
                             NormalizedName = "HR"

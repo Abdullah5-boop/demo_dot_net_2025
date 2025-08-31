@@ -18,9 +18,16 @@ namespace demoApp0818
           
 
 
-            builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(option =>
+            {
+                option.Password.RequiredLength = 6;
+                option.Password.RequireLowercase = true;
+                option.Password.RequireUppercase = false;
+                option.Password.RequireNonAlphanumeric = false;
+                option.Password.RequireDigit = false;
+                option.User.RequireUniqueEmail = true;
+                option.SignIn.RequireConfirmedEmail = false;
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 
 

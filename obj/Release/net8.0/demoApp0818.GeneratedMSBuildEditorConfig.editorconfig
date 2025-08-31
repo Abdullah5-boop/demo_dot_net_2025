@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRlbnRpdHlVc2VyXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/web project/dotnet/demoApp0818/Views/IdentityUser/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRlbnRpdHlVc2VyXFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/web project/dotnet/demoApp0818/Views/profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
